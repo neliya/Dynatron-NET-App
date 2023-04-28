@@ -28,6 +28,9 @@ namespace CustomerNetApp.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid");
 
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("timestamp with time zone");
+
                     b.Property<string>("Email")
                         .HasColumnType("text");
 
@@ -36,6 +39,9 @@ namespace CustomerNetApp.Migrations
 
                     b.Property<string>("LastName")
                         .HasColumnType("text");
+
+                    b.Property<DateTime>("LastUpdated")
+                        .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("Phone")
                         .HasColumnType("text");

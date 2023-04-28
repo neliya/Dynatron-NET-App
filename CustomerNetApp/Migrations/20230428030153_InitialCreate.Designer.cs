@@ -12,8 +12,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace CustomerNetApp.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230419034916_initial")]
-    partial class initial
+    [Migration("20230428030153_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -31,6 +31,10 @@ namespace CustomerNetApp.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid");
 
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("timestamp with time zone")
+                        .HasDefaultValueSql("now()");
+
                     b.Property<string>("Email")
                         .HasColumnType("text");
 
@@ -39,6 +43,9 @@ namespace CustomerNetApp.Migrations
 
                     b.Property<string>("LastName")
                         .HasColumnType("text");
+
+                    b.Property<DateTime>("LastUpdated")
+                        .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("Phone")
                         .HasColumnType("text");

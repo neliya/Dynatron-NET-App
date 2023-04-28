@@ -4,7 +4,11 @@ namespace CustomerNetApp.Models
 {
 	public class Customer
 	{
-		public Guid Id { get; set; }
+        public DateTime CreatedDate { get; set; }
+
+        public DateTime LastUpdated { get; set; }
+
+        public Guid Id { get; set; }
 
 		public string? FirstName { get; set; }
 
@@ -13,6 +17,8 @@ namespace CustomerNetApp.Models
 		public string? Phone { get; set; }
 
 		public string? Email { get; set; }
-	}
+
+
+    }
 }
 

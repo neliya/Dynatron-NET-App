@@ -59,6 +59,8 @@ namespace CustomerNetApp.Controllers
 			customer.LastName = updateCustomerRequest.LastName;
 			customer.Phone = updateCustomerRequest.Phone;
 			customer.Email = updateCustomerRequest.Email;
+			customer.CreatedDate = updateCustomerRequest.CreatedDate;
+			customer.LastUpdated = DateTime.UtcNow;
 
 			await _applicationDbContext.SaveChangesAsync();
 			return Ok(customer);
